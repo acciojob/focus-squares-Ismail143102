@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Colorful Squares</title>
-	<style>
-		.square {
-			width: 50px;
-			height: 50px;
-			display: inline-block;
-			margin: 10px;
-			background-color: #E6E6FA; /*lavender */
-			cursor: pointer;
-		}
-	</style>
+  <title>Focus Squares</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      gap: 20px;
+    }
+
+    .square {
+      width: 100px;
+      height: 100px;
+      background-color: #E6E6FA; /* Lavender */
+      border: 1px solid #ccc;
+      transition: background-color 0.2s ease;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-	<div class="square" id="square1" ></div>
-	<div class="square" id="square2" ></div>
-	<div class="square" id="square3" ></div>
 
-	<script type="text/javascript" src="./script.js">
-	</script>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+
+  <script>
+    const allSquares = document.querySelectorAll('.square');
+
+    allSquares.forEach((currentSquare, currentIndex) => {
+      currentSquare.addEventListener('mouseenter', () => {
+        allSquares.forEach((otherSquare, otherIndex) => {
+          if (otherIndex !== currentIndex) {
+            otherSquare.style.backgroundColor = '#6F4E37'; // Coffee
+          }
+        });
+      });
+
+      currentSquare.addEventListener('mouseleave', () => {
+        allSquares.forEach(square => {
+          square.style.backgroundColor = '#E6E6FA'; // Lavender
+        });
+      });
+    });
+  </script>
+
 </body>
 </html>
