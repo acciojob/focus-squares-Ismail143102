@@ -6,16 +6,14 @@
     body {
       margin: 0;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      min-height: 10vh;
       background-color: #f0f0f0;
       gap: 20px;
     }
 
     .square {
-      width: 100px;
-      height: 100px;
+      width: 50px;
+      height: 50px;
       background-color: #E6E6FA; /* Lavender */
       border: 1px solid #ccc;
       transition: background-color 0.2s ease;
@@ -25,9 +23,9 @@
 </head>
 <body>
 
-  <div class="square"></div>
-  <div class="square"></div>
-  <div class="square"></div>
+  <div id="square1" class="square"></div>
+<div id="square2" class="square"></div>
+<div id="square3" class="square"></div>
 
   <script>
     const allSquares = document.querySelectorAll('.square');
