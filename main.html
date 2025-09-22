@@ -31,17 +31,17 @@
     const allSquares = document.querySelectorAll('.square');
 
     allSquares.forEach((currentSquare, currentIndex) => {
-      currentSquare.addEventListener('mouseenter', () => {
+      currentSquare.addEventListener('mouseover', () => {
         allSquares.forEach((otherSquare, otherIndex) => {
           if (otherIndex !== currentIndex) {
-            otherSquare.style.backgroundColor = '#6F4E37'; // Coffee
+            otherSquare.style.backgroundColor = '#6F4E37'; 
           }
         });
       });
 
       currentSquare.addEventListener('mouseleave', () => {
         allSquares.forEach(square => {
-          square.style.backgroundColor = '#E6E6FA'; // Lavender
+          square.style.backgroundColor = '#E6E6FA'; 
         });
       });
     });
