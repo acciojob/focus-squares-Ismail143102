@@ -28,23 +28,32 @@
 <div id="square3" class="square"></div>
 
   <script>
-    const allSquares = document.querySelectorAll('.square');
+	  //your JS code here. If required.
+// Select all squares
+const squares = document.querySelectorAll(".square");
 
-    allSquares.forEach((currentSquare, currentIndex) => {
-      currentSquare.addEventListener('mouseover', () => {
-        allSquares.forEach((otherSquare, otherIndex) => {
-          if (otherIndex !== currentIndex) {
-            otherSquare.style.backgroundColor = '#6F4E37'; 
-          }
-        });
-      });
+// Colors
+const lavender = "#E6E6FA";
+const coffee = "#6F4E37";
 
-      currentSquare.addEventListener('mouseleave', () => {
-        allSquares.forEach(square => {
-          square.style.backgroundColor = '#E6E6FA'; 
-        });
-      });
+// Loop through each square
+squares.forEach((sq) => {
+  // When mouse enters one square
+  sq.addEventListener("mouseover", () => {
+    squares.forEach((otherSq) => {
+      if (otherSq !== sq) {
+        otherSq.style.backgroundColor = coffee;
+      }
     });
+  });
+
+  // When mouse leaves that square
+  sq.addEventListener("mouseout", () => {
+    squares.forEach((s) => {
+      s.style.backgroundColor = lavender;
+    });
+  });
+});
   </script>
 
 </body>
